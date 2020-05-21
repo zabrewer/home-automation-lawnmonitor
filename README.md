@@ -2,7 +2,7 @@
 ### Monitoring Home Lawn Health with Xiaomi "Mi Flora" Plant Monitor Sensor and a Raspberry Pi Over BlueTooth Low Energy (BLE)
 -----------------  
 
-<img src="assets/in_ground1.png" width="100">|<img src="assets/outside1.png" width="100">|<img src="assets/on_counter1.png" width="100">|<img src="assets/wide_inground1.png" width="100">
+<img src="assets/in_ground1.png" width="100"><img src="assets/outside1.png" width="100"><img src="assets/on_counter1.png" width="100"><img src="assets/wide_inground1.png" width="100">
 
 - [Introduction](#Purpose/About)
 - [About the Xiaomi "Mi Flora" Plant Monitor Sensor](#About-the-Xiaomi-"Mi-Flora"-Plant-Monitor-Sensor)

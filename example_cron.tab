@@ -1,3 +1,5 @@
 # example cron.tab file (crontab -e) for yardmonitor running in a virtual environment:
-0 11 * * * cd /home/pi/dev/yardmonitor && /home/pi/dev/yardmonitor/bin/python /home/pi/dev/yardmonitor/poller.py > /home/pi/dev/yardmonitor/logs/cronlog.txt 2>&1
-0 19 * * * cd /home/pi/dev/yardmonitor && /home/pi/dev/yardmonitor/bin/python /home/pi/dev/yardmonitor/poller.py > /home/pi/dev/yardmonitor/logs/cronlog.txt 2>&1
+0 11 * * * cd /home/pi/dev/home-automation-lawnmonitor &&/home/pi/dev/home-automation-lawnmonitor/bin/python /home/pi/dev/home-automation-lawnmonitor/lawnpoller/poller.py > /home/pi/dev/home-automation-lawnmonitor/logs/cronlog.txt 2>&1
+0 19 * * * cd /home/pi/dev/home-automation-lawnmonitor && /home/pi/dev/home-automation-lawnmonitor/bin/python /home/pi/dev/home-automation-lawnmonitor/lawnpoller/poller.py > /home/pi/dev/home-automation-lawnmonitor/logs/cronlog.txt 2>&1
+
+
