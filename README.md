@@ -2,10 +2,7 @@
 ### Monitoring Home Lawn Health with Xiaomi "Mi Flora" Plant Monitor Sensor and a Raspberry Pi Over BlueTooth Low Energy (BLE)
 -----------------  
 
-<img src="assets/in_ground1.png" width="100">
-<img src="assets/outside1.png" width="100">
-<img src="assets/on_counter1.png" width="100">
-<img src="assets/wide_inground1.png" width="100">
+<img src="assets/in_ground1.png" width="100">|<img src="assets/outside1.png" width="100">|<img src="assets/on_counter1.png" width="100">|<img src="assets/wide_inground1.png" width="100">
 
 - [Introduction](#Purpose/About)
 - [About the Xiaomi "Mi Flora" Plant Monitor Sensor](#About-the-Xiaomi-"Mi-Flora"-Plant-Monitor-Sensor)
@@ -50,7 +47,7 @@ The environmental data measured by the sensor includes:
 * Light Intensity (measured in lux) - [Read more about light + lux here](https://greeneryunlimited.co/blogs/plant-care/how-to-measure-light-for-plants)
 * Air Temp (measured in Celsius)
 
-The basic premise is: You open the app, choose the type of houseplant you have, and the app recommends more light, alerts your phone when it needs water, etc. These devices are actually well-made as noted by others who have conducted detailed teardowns. (See the [references section](#References) below for teardown details, SoC specifications, & more).
+The basic premise is: You open the app, choose the type of houseplant you have, and the app recommends more light, alerts your phone when it needs water, etc. These devices are actually well-made as noted by others who have conducted detailed teardowns. (See the [references section](#References/Further-Reading) below for teardown details, SoC specifications, & more).
 
 It is important to note that these devices they *are not* waterproof (I outlined [waterproofing efforts](#waterproofing) below).
 
@@ -197,28 +194,33 @@ pi@iot-pi:~ $ pip3 --version
 pip 18.1 from /usr/lib/python3/dist-packages/pip (python 3.7)
 pi@iot-pi:~ $
 ```
+3) make sure git is installed with `git --version`, if not install git:
+
+``` shell
+pi@iot-pi:~ $ sudo apt-get -y update && sudo apt-get -y install git
+```
 
 3) Create the directory for the Python virtual environment
 ``` shell
-pi@iot-pi:~ $ mkdir -p ~/dev/lawnpoller
+pi@iot-pi:~ $ mkdir -p ~/dev/home-automation-lawnmonitor
 ```
 
-4) Clone this repo into `~/dev/lawnpoller` directory:
+4) Clone this repo into `~/dev/home-automation-lawnmonitor` directory:
 
 ``` shell
-pi@iot-pi:~ $ git clone zabrewer@github.com:lawnpoller ~/dev/lawnpoller
+pi@iot-pi:~ $ git clone https://github.com/zabrewer/home-automation-lawnmonitor.git ~/dev/home-automation-lawnmonitor
 ```
 
-5) Create Python Virtual Environment in the `~/dev/lawnpoller` directory:
+5) Create Python Virtual Environment in the `~/dev/home-automation-lawnmonitor` directory:
 ``` shell
-pi@iot-pi:~ $ python3 -m venv ~/dev/lawnpoller && cd ~/dev/lawnpoller && source bin/activate
-(lawnpoller) pi@iot-pi:~/dev/lawnpoller $
+pi@iot-pi:~ $ python3 -m venv ~/dev/home-automation-lawnmonitor && cd ~/dev/home-automation-lawnmonitor && source bin/activate
+(lawnpoller) pi@iot-pi:~/dev/home-automation-lawnmonitor $
 ```
-> Note the shell above changed to the name of the virtual environment in parentheses indicating that we are now in the ```lawnpoller``` virtual environment.  E.g. ```(lawnpoller) pi@iot-pi:~/dev/lawnpoller $```
+> Note the shell above changed to the name of the virtual environment in parentheses indicating that we are now in the ```lawnpoller``` virtual environment.  E.g. ```(lawnpoller) pi@iot-pi:~/dev/home-automation-lawnmonitor $```
 
 6) If all went well, we can install Python dependencies into the virtual environment:
 ``` shell
-(lawnpoller) pi@iot-pi:~/dev/lawnpoller $ python setup.py .
+(lawnpoller) pi@iot-pi:~/dev/home-automation-lawnmonitor $ python setup.py .
 ```
 > If you have more than one Raspberry Pi (or other polling device), you will have to repeat Steps 1-6 above for each Pi.
 
@@ -230,8 +232,8 @@ We are now ready to test connectivity to a sensor by using the Python shell.  Yo
 
 1) Verify that the lawnpoller virtual environment is still active and enter the Python interactive shell:
 ```Python
-pi@iot-pi: source ~/dev/lawnpoller/bin/activate && python
-(lawnpoller) pi@iot-pi: ~/dev/lawnpoller $
+pi@iot-pi: source ~/dev/home-automation-lawnmonitor/bin/activate && python
+(lawnpoller) pi@iot-pi: ~/dev/home-automation-lawnmonitor $
 Python 3.7.3 (default, Dec 20 2019, 18:57:59)
 [GCC 8.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -281,3 +283,5 @@ https://console.developers.google.com/
 ## Customizing the Python Code from this Repo
  
 ## Creating a Polling Schedule Using Cron
+
+## References/Further Reading
